@@ -1,0 +1,405 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<meta charset="utf-8">
+	<meta name="viewport" content="width=device-width, initial-scale=1">
+	
+        <!-- Hammer reload -->
+          <script>
+            setInterval(function(){
+              try {
+                if(typeof ws != 'undefined' && ws.readyState == 1){return true;}
+                ws = new WebSocket('ws://'+(location.host || 'localhost').split(':')[0]+':35353')
+                ws.onopen = function(){ws.onclose = function(){document.location.reload()}}
+                ws.onmessage = function(){
+                  var links = document.getElementsByTagName('link'); 
+                    for (var i = 0; i < links.length;i++) { 
+                    var link = links[i]; 
+                    if (link.rel === 'stylesheet' && !link.href.match(/typekit/)) { 
+                      href = link.href.replace(/((&|\?)hammer=)[^&]+/,''); 
+                      link.href = href + (href.indexOf('?')>=0?'&':'?') + 'hammer='+(new Date().valueOf());
+                    }
+                  }
+                }
+              }catch(e){}
+            }, 1000)
+          </script>
+        <!-- /Hammer reload -->
+      
+	<link href='http://fonts.googleapis.com/css?family=Open+Sans:400,700,300' rel='stylesheet' type='text/css'>
+	<link href='http://fonts.googleapis.com/css?family=Comfortaa:400,300,700' rel='stylesheet' type='text/css'>
+     <link href='http://fonts.googleapis.com/css?family=PT+Sans:400,700,400italic,700italic|Droid+Serif:400,700,400italic,700italic' rel='stylesheet' type='text/css'>
+
+	<link rel="shortcut icon" href="favicon.jpg">
+	<script type="text/javascript" src="http://maps.google.com/maps/api/js?sensor=true"></script>
+
+  <link rel='stylesheet' href='assets/css/normalize.css'>
+<link rel='stylesheet' href='assets/js/foundation/css/foundation.min.css'>
+<link rel='stylesheet' href='assets/js/foundation-icons/foundation-icons.css'>
+<link rel='stylesheet' href='assets/fontawesome/css/font-awesome.css'>
+<link rel='stylesheet' href='assets/css/animate.css'>
+<link rel='stylesheet' href='assets/js/slick/slick.css'>
+<link rel='stylesheet' href='assets/rs-plugin/css/settings.css'>
+<link rel='stylesheet' href='assets/css/style.css'>
+  <script src='assets/js/foundation/js/vendor/modernizr.js'></script>
+<script src='assets/js/jquery/dist/jquery.min.js'></script>
+<script src='assets/js/foundation/js/vendor/fastclick.js'></script>
+<script src='assets/js/foundation/js/foundation.min.js'></script>
+<script src='assets/js/foundation/js/foundation/foundation.equalizer.js'></script>
+<script src='assets/js/slick/slick.min.js'></script>
+<script src='assets/js/jquery.SimpleGMaps.min.js'></script>
+<script src='assets/js/waypoints.min.js'></script>
+<script src='assets/js/waypoints-sticky.min.js'></script>
+  <script src='assets/rs-plugin/js/jquery.themepunch.tools.min.js'></script>
+<script src='assets/rs-plugin/js/jquery.themepunch.revolution.js'></script>
+  <script src='assets/js/jquery.velocity.min.js'></script>
+<script src='assets/js/jquery.parallax-1.1.3.js'></script>
+<script src='assets/js/wow.min.js'></script>
+<script src='assets/js/app.js'></script> 
+	<script src="//www.parsecdn.com/js/parse-1.2.18.min.js"></script>  
+  
+  <title>Tecnolent Óptica · Optometría · Gafas de moda
+
+ </title>
+  
+</head>
+
+<body>
+
+
+<div class='nav top-bar' data-options='sticky_on: medium' data-topbar='' role='navigation'>
+  <ul class='title-area'>
+    <li class='toggle-topbar menu-icon' style='color: white;'>
+      <a href='#'>menu</a>
+    </li>
+  </ul>
+  <section class='top-bar-section'>
+    <div class='column medium-4 show-for-medium-up'>
+      <div class='datos' style=' color: white;line-height: 1.8'>
+        <span>
+          <i class='fa fa-fw fa-facebook'></i>
+          <a href='https://www.facebook.com/tecnolent'>Siguenos en Facebook!</a>
+        </span>
+        <br>
+        <span>
+          <i class='fa fa-fw fa-home'></i>
+          C/ Ceramista Ros, 18
+          &nbsp;-&nbsp;
+          Valencia
+        </span>
+        <br>
+        <span>
+          <i class='fa fa-fw fa-mobile'></i>
+          963 28 85 95
+        </span>
+      </div>
+    </div>
+  </section>
+  <section class='top-bar-section'>
+    <div class='column medium-2'>
+      <img class='wow fadeIn' src='assets/img/logo-tecnolens-trans.png'>
+    </div>
+  </section>
+  <section class='top-bar-section right'>
+    <div id='linkbar'>
+      <ul>
+        <li>
+          <a class='menu-link' href='#'>Home</a>
+        </li>
+        <li>
+          <a class='menu-link' href='#quienes'>Quienes Somos</a>
+        </li>
+        <li>
+          <a class='menu-link' href='#marcas'>Marcas</a>
+        </li>
+        <li>
+          <a class='menu-link' href='#servicios'>Servicios</a>
+        </li>
+        <li>
+          <a class='menu-link' href='#contactoBg'>Contacto</a>
+        </li>
+      </ul>
+    </div>
+  </section>
+</div>
+<div class='slider_container'>
+  <div id='slider'>
+  <ul>
+    <li data-masterspeed='600' data-slotamount='7' data-transition='random'>
+      <img src='assets/img/carrusel/hickmann2.jpg'>
+      <div class='caption azul1-33 sfr fadeout' data-elementdelay='0.1' data-hoffset='-40' data-speed='300' data-splitin='chars' data-voffset='60' data-x='right' data-y='top'>
+        <h3>CUIDAMOS</h3>
+      </div>
+      <div class='caption azul2-25 sfr fadeout' data-elementdelay='0.1' data-hoffset='-40' data-speed='700' data-splitin='chars' data-voffset='130' data-x='right' data-y='top'>
+        <h3>TU VISTA</h3>
+      </div>
+    </li>
+    <li data-masterspeed='600' data-slotamount='7' data-transition='random'>
+      <img src='assets/img/carrusel/vogue_carrusel.jpg'>
+    </li>
+    <li data-masterspeed='600' data-slotamount='7' data-transition='random'>
+      <img src='assets/img/carrusel/fondo-blanco.jpg'>
+      <div class='caption azul2-25 sfr fadeout' data-elementdelay='0.1' data-hoffset='0' data-speed='300' data-splitin='chars' data-voffset='60' data-x='left' data-y='top'>
+        <h5>Primeras marcas</h5>
+      </div>
+      <div class='caption azul2-25 sfr fadeout' data-elementdelay='0.1' data-speed='500' data-splitin='chars' data-voffset='130' data-x='left' data-y='top'>
+        <h5>seleccionadas para ti</h5>
+      </div>
+      <div class='caption sft fadeout' data-speed='600' data-voffset='40' data-x='right' data-y='top'>
+        <img src='assets/img/carrusel/tommyrocker.jpg'>
+      </div>
+      <div class='caption sfb fadeout' data-hoffset='100' data-speed='600' data-voffset='260' data-x='left' data-y='top'>
+        <a class='boton-slider' href='#contacto'>
+          <i class='fi-fast-forward'></i>
+          Ven a vernos
+        </a>
+      </div>
+    </li>
+  </ul>
+</div>
+
+</div>
+<div class='bottom-bar'></div>
+<div class='destacados'>
+  <div class='row'>
+    <div class='column medium-6 wow slideInLeft' id='hero-box'>
+      <img src='assets/img/hero.jpg'>
+      <p>
+        <h5>
+          Garantía en el cuidado
+        </h5>
+        <h5>
+          de tu visión
+        </h5>
+      </p>
+    </div>
+    <div class='column medium-6 wow slideInRight'>
+      <div class='dest-carrousel'>
+        <div class='slide'>
+          <i class='fa fa-fw fa-4x pull-left fa-users'></i>
+          <div class='content'>
+            <h3>Trato cordial</h3>
+            <p>Nuestro equipo te hará sentir como en casa</p>
+          </div>
+        </div>
+        <div class='slide'>
+          <i class='fa fa-fw fa-4x pull-left fa-star-o'></i>
+          <div class='content'></div>
+          <h3>Atención profesional</h3>
+          <p>Sin duda estás en buenas manos</p>
+        </div>
+        <div class='slide'>
+          <i class='fa fa-fw fa-4x pull-left fa-tags'></i>
+          <div class='content'>
+            <h3>Marcas de moda</h3>
+            <p>Seleccionamos las mejores gafas para ti</p>
+          </div>
+        </div>
+        <div class='slide'>
+          <i class='fa fa-fw fa-4x pull-left fa-thumbs-o-up'></i>
+          <div class='content'>
+            <h3>Completa satisfacción</h3>
+            <p>Nos aseguramos que quieras volver</p>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
+<div class='spacer parallax bg1'>
+  <div class='filler' style='height: 100%; width: 100%;'></div>
+</div>
+<div class='quienes'>
+  <div class='row' id='quienes'>
+    <div class='titulo wow fadeIn small-12 medium-6 large-centered columns'>
+      <h2>Quienes Somos</h2>
+      <h5>Óptometristas siempre a tu disposición</h5>
+    </div>
+  </div>
+  <div class='row' id='quienes-fotos'>
+    <div class='medium-7 column wow fadeInLeft' style='padding-right: 20px'>
+      <div id='slider-tienda' style='width: 100%'>
+        <ul>
+          <li data-masterspeed='600' data-slotamount='7' data-transition='random'>
+            <img src='assets/img/tienda/tienda1.jpg'>
+          </li>
+          <li data-masterspeed='600' data-slotamount='7' data-transition='random'>
+            <img src='assets/img/tienda/tienda2.jpg'>
+          </li>
+          <li data-masterspeed='600' data-slotamount='7' data-transition='random'>
+            <img src='assets/img/tienda/tienda3.jpg'>
+          </li>
+          <li data-masterspeed='600' data-slotamount='7' data-transition='random'>
+            <img src='assets/img/tienda/tienda4.jpg'>
+          </li>
+        </ul>
+      </div>
+    </div>
+    <div class='medium-5 column center wow fadeInRight' style='padding-left: 20px;padding-top: 40px'>
+      <blockquote style='text-align: justify; text-justify: inter-word;'>
+        En <strong>Tecnolent</strong> intentamos siempre ofrecer a cada persona <strong>la mejor solución</strong>.</br></br>
+        Por eso, a la hora de realizar la compra, además de aconsejarte, tratamos de informarte explicándote las distintas opciones disponibles, con sus ventajas e inconvenientes.
+      </blockquote>
+    </div>
+  </div>
+</div>
+<div class='spacer parallax bg2'>
+  <div class='filler' style='height: 100%; width: 100%'></div>
+</div>
+<div class='marcas'>
+  <div class='row' id='marcas'>
+    <div class='titulo wow fadeIn small-12 medium-6 large-centered columns'>
+      <h2>Nuestras marcas</h2>
+      <h5>Seleccionamos una a una nuestras gafas</h5>
+    </div>
+  </div>
+  <div class='row wow fadeInDown' id='marcas-grid'>
+    <ul class='small-block-grid-3 medium-block-grid-6'>
+      <li>
+        <img src='assets/img/marcas/tommy.jpg'>
+      </li>
+      <li>
+        <img src='assets/img/marcas/rayban.jpg'>
+      </li>
+      <li>
+        <img src='assets/img/marcas/prada.jpg'>
+      </li>
+      <li>
+        <img src='assets/img/marcas/carrera.jpg'>
+      </li>
+      <li>
+        <img src='assets/img/marcas/vogue.jpg'>
+      </li>
+      <li>
+        <img src='assets/img/marcas/tous.jpg'>
+      </li>
+      <li>
+        <img src='assets/img/marcas/police.jpg'>
+      </li>
+      <li>
+        <img src='assets/img/marcas/arnette.jpg'>
+      </li>
+      <li>
+        <img src='assets/img/marcas/emporio_armani.jpg'>
+      </li>
+      <li>
+        <img src='assets/img/marcas/mbmj.jpg'>
+      </li>
+      <li>
+        <img src='assets/img/marcas/dolce.jpg'>
+      </li>
+      <li>
+        <img src='assets/img/marcas/sil.jpg'>
+      </li>
+    </ul>
+  </div>
+</div>
+<div class='spacer parallax bg1'>
+  <div class='filler' style='height: 100%; width: 100%'></div>
+</div>
+<div class='servicios'>
+  <div class='row' id='servicios'>
+    <div class='titulo wow fadeIn small-12 medium-6 large-centered columns'>
+      <h2>Servicio</h2>
+      <h5>Profesionales a la atención de tu vista</h5>
+    </div>
+  </div>
+  <div class='row wow fadeIn'>
+    <ul class='tabs' data-tab='' role='tablist'>
+      <li class='tab-title'>
+        <a href='#panel2'>Gabinete de Refracción</a>
+      </li>
+      <li class='tab-title'>
+        <a href='#panel3'>Contactología</a>
+      </li>
+    </ul>
+    <div class='tabs-content'>
+      <div class='content active clearfix' id='panel2'>
+        <img src='assets/img/gabinet.jpg'>
+        <br>
+        <p>
+          En nuestro gabinete realizamos <strong>exámenes exhaustivos</strong> para detectar cualquier anomalía de la visión.
+        </p>
+        <p>
+          Según el caso, nosotros,<strong> profesionales de la visión</strong>, les ofreceremos <strong>el mejor procedimiento</strong> para tratar las anomalías detectadas, bien con el uso de lentes  correctoras en gafas o en lentes de contacto (miopía, hipermetropía, astigmatismo, presbicia "vista cansada") o a través de <strong>programas personalizados</strong> de terapia visual.
+        </p>
+      </div>
+      <div class='content clearfix' id='panel3'>
+        <img src='assets/img/contactologia.jpg'>
+        <br>
+        <p>
+          Las lentes de contacto, como alternativa al uso de gafas, cada vez es más frecuente en edades comprendidas desde los doce a los 40 años.
+        </p>
+        <p>
+          Te ofrecemos un <strong>asesoramiento personalizado</strong>. Proporcionamos las lentes de contacto que mejor se adaptan a sus problemas visuales y parámetros oculares.
+          Disponemos de <strong>todo tipo de lentes de contacto</strong> , miopía, hipermetropía, astigmatismo, multifocales (progresivas), rígidas, queratoconos, con los materiales específicos para cada usuario, pudiendo dar confort incluso a usuarios con sequedad ocular.
+        </p>
+      </div>
+    </div>
+  </div>
+</div>
+<div class='contacto'>
+  <div class='row' id='contacto'>
+    <div class='titulo wow fadeIn small-12 medium-6 large-centered columns'>
+      <h2>Contacto</h2>
+      <h5>¿Alguna consulta? No dudes en hablar con nosotros!</h5>
+    </div>
+  </div>
+  <div id='form-data'>
+    <div class='row' id='formulario'>
+      <div class='medium-6 column wow fadeInLeft'>
+        <div class='form' id='mailform'>
+          <div class='field small-12 columns'>
+            <input id='mail_nombre' name='nombre' placeholder='Nombre' type='text'>
+          </div>
+          <div class='field small-12 columns'>
+            <input id='mail_email' name='email' placeholder='E-Mail' type='text'>
+          </div>
+          <div class='field small-12 columns'>
+            <textarea id='mail_mensaje' name='mensaje' placeholder='Mensaje' rows='8'></textarea>
+          </div>
+          <a class='small submit button' href='#'>Enviar</a>
+          <span id='form_error'></span>
+        </div>
+      </div>
+      <div class='medium-2 column wow fadeIn'></div>
+      <div class='medium-4 column wow fadeInRight' style='color: white'>
+        <a href='https://www.facebook.com/tecnolent'>
+          <img src='assets/img/fb.jpg'>
+        </a>
+        <br>
+        <br>
+        <i class='fa fa-fw fa-2x pull-left fa-home'></i>
+        C/ Ceramista Ros, 18
+        Valencia
+        <br>
+        <br>
+        <i class='fa fa-fw fa-2x pull-left fa-mobile'></i>
+        963 28 85 95
+        <br>
+        <br>
+        <i class='fa fa-fw fa-2x pull-left fa-envelope'></i>
+        info@tecnolent.com
+      </div>
+    </div>
+  </div>
+  <div class='wow fadeIn' id='mapa'>
+    <div class='map-marker' data-latlng='39.4622313,-0.4035354' data-title='Tecnolent'>
+      <div class='map-infowindow'>
+        <h3>Tecnolent</h3>
+        <a href='https://goo.gl/JtxUyf'>Ver en Google Maps</a>
+      </div>
+    </div>
+  </div>
+</div>
+<div id='footer'>
+  <div class='row'>
+    <strong>
+      @2015 Tecno-lent /
+    </strong>
+    <span>
+      Diseñado por
+      <a href='http://www.inheron.com' style='text-decoration: none; color: #bbb' target='_blank'>Jorge Mollón</a>
+    </span>
+  </div>
+</div>

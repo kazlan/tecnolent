@@ -1,0 +1,14 @@
+{
+    "applications": {
+        "_default": {
+            "link": "opticalWeb"
+        }, 
+        "opticalWeb": {
+            "applicationId": "wOlDC0POj324yXYDCRd65f7mqUvwO8dGTYCmH7lz", 
+            "masterKey": "DwZVtYXoURpzSscO1dgtUthNN0CRNMMUzf4nMzRS"
+        }
+    }, 
+    "global": {
+        "parseVersion": "1.2.18"
+    }
+}
